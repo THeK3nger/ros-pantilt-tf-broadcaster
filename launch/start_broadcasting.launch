@@ -1,0 +1,12 @@
+<launch>
+    <node pkg="tf" type="static_transform_publisher" name="static_pantilt_broadcaster"
+    args="0 0 5 0 0 0 base_link pantilt 100" />
+    <node name="pantilt_broadcaster" pkg="pantilt_tf_broadcaster" 
+    type="pantilt_tf_broadcaster.py" respawn="false" output="screen">
+        <param name="a" type="double" value="2"/>
+        <param name="d" type="double" value="2"/>
+        <param name="pantilt_frame_name" type="string" value="pantilt"/>
+        <param name="camera_frame_name" type="string" value="camera"/>
+        <param name="joint_input_topic" type="string" value="joint_states"/>
+    </node>
+</launch>
