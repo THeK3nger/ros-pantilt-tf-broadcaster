@@ -26,7 +26,7 @@ import pt_transformation as pt
 
 
 def pantilt_callback(msg) :
-    print "Callback!"
+    #print "Callback!"
     br = tf.TransformBroadcaster()
     # Get joint state.
     pan = msg.position[0]
