@@ -28,9 +28,12 @@ import pt_transformation as pt
 def pantilt_callback(msg) :
     print "Callback!"
     br = tf.TransformBroadcaster()
+    # Get joint state.
+    pan = msg.position[0]
+    tilt = msg.position[1]
     #Get position and orientation and convert them in standard python list.
-    position = [i[0] for i in PT.translation_to_camera(0,0).tolist()]
-    orientation = PT.quaternion_to_camera(0,0).tolist()[0]
+    position = [i[0] for i in PT.translation_to_camera(pan,tilt).tolist()]
+    orientation = PT.quaternion_to_camera(pan,tilt).tolist()[0]
     #print position, orientation
     br.sendTransform(position,
                     orientation,
