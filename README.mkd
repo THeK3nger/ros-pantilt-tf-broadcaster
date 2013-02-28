@@ -1,0 +1,45 @@
+# What is ros-pantilt-tf-broadcaster?
+
+This is a [ROS][1] package to broadcast tf (transformation frames) for a camera mounted 
+on a pan-tilt device.
+
+The node take a  **JointState** message containing information about pan and tilt angles
+and generate the corresponding homogeneous transformation matrix that bring a point
+in camera frame into the reference frame.
+
+# Package Dependencies
+
+The package depends on [Numpy][2] Python package.
+
+# How to use?
+
+The node can be started with
+
+    roslaunch ros-pantilt_tf_broadcaster start_broadcasting.launch
+
+The launch file must be configured in order to give useful results.
+
+## Node Configuration
+
+This is a list of node parameters.
+
+ * `a` (*double*) : The horizontal offset between camera and tilt frames.
+ * `d` (*double*) : The vertical offset between tilt and pan frames.
+ * `pantilt_frame_name` (*string*) : Name for pantilt base frame.
+ * `camera_frame_name` (*string*)  : Name for the output camera frame.
+ * `joint_input_topic` (*string*)  : The topic where joint info are published.
+
+# To-Do List
+
+Some things that have to be done.
+
+ * Add a parameter for the fixed-camera-offset (now it is hard coded in the python file).
+ * Check the validity of the transformation.
+ * More documentation.
+
+# Copyrights
+
+@ Davide Aversa 2013 -- Distributed under BSD License.
+
+[1]: http://www.ros.org/wiki/
+[2]: http://www.numpy.org/
