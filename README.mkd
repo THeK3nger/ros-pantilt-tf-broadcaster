@@ -15,7 +15,7 @@ The package depends on [Numpy][2] Python package.
 
 The node can be started with
 
-    roslaunch ros-pantilt_tf_broadcaster start_broadcasting.launch
+    roslaunch ros-pantilt-tf-broadcaster start-broadcasting.launch
 
 The launch file must be configured in order to give useful results.
 
@@ -23,11 +23,11 @@ The launch file must be configured in order to give useful results.
 
 This is a list of node parameters.
 
- * `a` (*double*) : The horizontal offset between camera and tilt frames.
- * `d` (*double*) : The vertical offset between tilt and pan frames.
- * `pantilt_frame_name` (*string*) : Name for pantilt base frame.
- * `camera_frame_name` (*string*)  : Name for the output camera frame.
- * `joint_input_topic` (*string*)  : The topic where joint info are published.
+ * `a` (double) : The horizontal offset between camera and tilt frames.
+ * `d` (double) : The vertical offset between tilt and pan frames.
+ * `pantilt_frame_name` (string) : Name for pantilt base frame.
+ * `camera_frame_name` (string)  : Name for the output camera frame.
+ * `joint_input_topic` (string)  : The topic where joint info are published.
 
 # To-Do List
 
@@ -39,7 +39,7 @@ Some things that have to be done.
 
 # Copyrights
 
-@ Davide Aversa 2013 -- Distributed under BSD License.
+© Davide Aversa 2013 -- Distributed under BSD License.
 
 [1]: http://www.ros.org/wiki/
 [2]: http://www.numpy.org/
